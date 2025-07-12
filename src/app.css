@@ -1,3 +1,371 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@plugin 'flowbite/plugin';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	/* Primary: Medical Teal - Professional, trustworthy, and calming */
+	--color-primary-50: #f0fdfa;
+	--color-primary-100: #ccfbf1;
+	--color-primary-200: #99f6e4;
+	--color-primary-300: #5eead4;
+	--color-primary-400: #2dd4bf;
+	--color-primary-500: #14b8a6;
+	--color-primary-600: #0d9488;
+	--color-primary-700: #0f766e;
+	--color-primary-800: #115e59;
+	--color-primary-900: #134e4a;
+	--color-primary-950: #042f2e;
+
+	/* Secondary: Healthcare Blue - Trust, stability, and professionalism */
+	--color-secondary-50: #eff6ff;
+	--color-secondary-100: #dbeafe;
+	--color-secondary-200: #bfdbfe;
+	--color-secondary-300: #93c5fd;
+	--color-secondary-400: #60a5fa;
+	--color-secondary-500: #3b82f6;
+	--color-secondary-600: #2563eb;
+	--color-secondary-700: #1d4ed8;
+	--color-secondary-800: #1e40af;
+	--color-secondary-900: #1e3a8a;
+	--color-secondary-950: #172554;
+
+	/* Success: Fresh Green - Health, vitality, positive outcomes */
+	--color-success-50: #f0fdf4;
+	--color-success-100: #dcfce7;
+	--color-success-200: #bbf7d0;
+	--color-success-300: #86efac;
+	--color-success-400: #4ade80;
+	--color-success-500: #22c55e;
+	--color-success-600: #16a34a;
+	--color-success-700: #15803d;
+	--color-success-800: #166534;
+	--color-success-900: #14532d;
+	--color-success-950: #052e16;
+
+	/* Warning: Warm Amber - Attention, caution, important notices */
+	--color-warning-50: #fffbeb;
+	--color-warning-100: #fef3c7;
+	--color-warning-200: #fde68a;
+	--color-warning-300: #fcd34d;
+	--color-warning-400: #fbbf24;
+	--color-warning-500: #f59e0b;
+	--color-warning-600: #d97706;
+	--color-warning-700: #b45309;
+	--color-warning-800: #92400e;
+	--color-warning-900: #78350f;
+	--color-warning-950: #451a03;
+
+	/* Error: Medical Red - Alerts, errors, critical information */
+	--color-error-50: #fef2f2;
+	--color-error-100: #fee2e2;
+	--color-error-200: #fecaca;
+	--color-error-300: #fca5a5;
+	--color-error-400: #f87171;
+	--color-error-500: #ef4444;
+	--color-error-600: #dc2626;
+	--color-error-700: #b91c1c;
+	--color-error-800: #991b1b;
+	--color-error-900: #7f1d1d;
+	--color-error-950: #450a0a;
+
+	/* Info: Soft Purple - Information, neutral alerts */
+	--color-info-50: #faf5ff;
+	--color-info-100: #f3e8ff;
+	--color-info-200: #e9d5ff;
+	--color-info-300: #d8b4fe;
+	--color-info-400: #c084fc;
+	--color-info-500: #a855f7;
+	--color-info-600: #9333ea;
+	--color-info-700: #7c3aed;
+	--color-info-800: #6b21a8;
+	--color-info-900: #581c87;
+	--color-info-950: #3b0764;
+
+	/* Grays: Clean, modern neutral palette */
+	--color-gray-50: #f8fafc;
+	--color-gray-100: #f1f5f9;
+	--color-gray-200: #e2e8f0;
+	--color-gray-300: #cbd5e1;
+	--color-gray-400: #94a3b8;
+	--color-gray-500: #64748b;
+	--color-gray-600: #475569;
+	--color-gray-700: #334155;
+	--color-gray-800: #1e293b;
+	--color-gray-900: #0f172a;
+	--color-gray-950: #020617;
+
+	/* Dark mode specific colors */
+	--color-dark-50: #f8fafc;
+	--color-dark-100: #f1f5f9;
+	--color-dark-200: #e2e8f0;
+	--color-dark-300: #cbd5e1;
+	--color-dark-400: #94a3b8;
+	--color-dark-500: #64748b;
+	--color-dark-600: #475569;
+	--color-dark-700: #334155;
+	--color-dark-800: #1e293b;
+	--color-dark-900: #0f172a;
+
+	/* Custom healthcare-specific colors */
+	--color-health-emergency: #dc2626;
+	--color-health-urgent: #ea580c;
+	--color-health-routine: #14b8a6;
+	--color-health-preventive: #22c55e;
+	--color-health-mental: #8b5cf6;
+	--color-health-dental: #06b6d4;
+	--color-health-vision: #3b82f6;
+	--color-health-pharmacy: #10b981;
+
+	/* Background and surface colors */
+	--color-background: #ffffff;
+	--color-background-secondary: #f8fafc;
+	--color-surface: #ffffff;
+	--color-surface-secondary: #f1f5f9;
+	--color-surface-tertiary: #e2e8f0;
+
+	/* Dark mode backgrounds */
+	--color-background-dark: #0f172a;
+	--color-background-dark-secondary: #1e293b;
+	--color-surface-dark: #1e293b;
+	--color-surface-dark-secondary: #334155;
+	--color-surface-dark-tertiary: #475569;
+
+	/* Text colors */
+	--color-text-primary: #0f172a;
+	--color-text-secondary: #475569;
+	--color-text-tertiary: #64748b;
+	--color-text-inverse: #ffffff;
+
+	/* Dark mode text */
+	--color-text-dark-primary: #f8fafc;
+	--color-text-dark-secondary: #cbd5e1;
+	--color-text-dark-tertiary: #94a3b8;
+
+	/* Border colors */
+	--color-border: #e2e8f0;
+	--color-border-secondary: #cbd5e1;
+	--color-border-dark: #334155;
+	--color-border-dark-secondary: #475569;
+}
+
+@source "../node_modules/flowbite-svelte/dist";
+@source "../node_modules/flowbite-svelte-icons/dist";
+
+@layer base {
+	/* Disable chrome cancel button */
+	input[type='search']::-webkit-search-cancel-button {
+		display: none;
+	}
+
+	/* Custom healthcare-focused base styles */
+	:root {
+		/* Font stack optimized for healthcare readability */
+		--font-sans:
+			'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+			sans-serif;
+		--font-mono: 'JetBrains Mono', 'Fira Code', Consolas, 'Liberation Mono', Menlo, monospace;
+	}
+
+	body {
+		font-family: var(--font-sans);
+		font-feature-settings: 'cv11', 'ss01';
+		font-variation-settings: 'opsz' 32;
+	}
+
+	/* Smooth scrolling for better UX */
+	html {
+		scroll-behavior: smooth;
+	}
+
+	/* Focus styles for accessibility */
+	*:focus-visible {
+		outline: 2px solid var(--color-primary-500);
+		outline-offset: 2px;
+	}
+
+	/* Selection colors */
+	::selection {
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+	}
+}
+
+@layer components {
+	/* Custom healthcare component styles */
+	.btn-healthcare-primary {
+		@apply bg-primary-600 hover:bg-primary-700 focus:ring-primary-500 rounded-lg px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200;
+	}
+
+	.btn-healthcare-secondary {
+		@apply bg-secondary-600 hover:bg-secondary-700 focus:ring-secondary-500 rounded-lg px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200;
+	}
+
+	.card-healthcare {
+		@apply rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md;
+	}
+
+	.card-healthcare-dark {
+		@apply rounded-xl border border-gray-700 bg-gray-800 shadow-sm transition-shadow duration-200 hover:shadow-md;
+	}
+
+	.input-healthcare {
+		@apply focus:ring-primary-500 focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 transition-colors duration-200;
+	}
+
+	.badge-emergency {
+		@apply rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800;
+	}
+
+	.badge-urgent {
+		@apply rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-medium text-orange-800;
+	}
+
+	.badge-routine {
+		@apply rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-medium text-teal-800;
+	}
+
+	.badge-preventive {
+		@apply rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800;
+	}
+
+	/* Status indicators */
+	.status-active {
+		@apply border border-green-200 bg-green-100 text-green-800;
+	}
+
+	.status-pending {
+		@apply border border-yellow-200 bg-yellow-100 text-yellow-800;
+	}
+
+	.status-inactive {
+		@apply border border-gray-200 bg-gray-100 text-gray-800;
+	}
+
+	.status-expired {
+		@apply border border-red-200 bg-red-100 text-red-800;
+	}
+
+	/* Healthcare-specific gradients */
+	.gradient-healthcare-primary {
+		background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
+	}
+
+	.gradient-healthcare-secondary {
+		background: linear-gradient(
+			135deg,
+			var(--color-secondary-500) 0%,
+			var(--color-secondary-600) 100%
+		);
+	}
+
+	.gradient-healthcare-success {
+		background: linear-gradient(135deg, var(--color-success-500) 0%, var(--color-success-600) 100%);
+	}
+}
+
+@layer utilities {
+	/* Healthcare-specific utility classes */
+	.text-health-emergency {
+		color: var(--color-health-emergency);
+	}
+	.text-health-urgent {
+		color: var(--color-health-urgent);
+	}
+	.text-health-routine {
+		color: var(--color-health-routine);
+	}
+	.text-health-preventive {
+		color: var(--color-health-preventive);
+	}
+	.text-health-mental {
+		color: var(--color-health-mental);
+	}
+	.text-health-dental {
+		color: var(--color-health-dental);
+	}
+	.text-health-vision {
+		color: var(--color-health-vision);
+	}
+	.text-health-pharmacy {
+		color: var(--color-health-pharmacy);
+	}
+
+	.bg-health-emergency {
+		background-color: var(--color-health-emergency);
+	}
+	.bg-health-urgent {
+		background-color: var(--color-health-urgent);
+	}
+	.bg-health-routine {
+		background-color: var(--color-health-routine);
+	}
+	.bg-health-preventive {
+		background-color: var(--color-health-preventive);
+	}
+	.bg-health-mental {
+		background-color: var(--color-health-mental);
+	}
+	.bg-health-dental {
+		background-color: var(--color-health-dental);
+	}
+	.bg-health-vision {
+		background-color: var(--color-health-vision);
+	}
+	.bg-health-pharmacy {
+		background-color: var(--color-health-pharmacy);
+	}
+
+	/* Glassmorphism utilities */
+	.glass {
+		backdrop-filter: blur(16px) saturate(180%);
+		background-color: rgba(255, 255, 255, 0.75);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+	}
+
+	.glass-dark {
+		backdrop-filter: blur(16px) saturate(180%);
+		background-color: rgba(15, 23, 42, 0.75);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+	}
+
+	/* Medical priority indicators */
+	.priority-critical {
+		@apply border-l-4 border-red-500 bg-red-50;
+	}
+
+	.priority-high {
+		@apply border-l-4 border-orange-500 bg-orange-50;
+	}
+
+	.priority-medium {
+		@apply border-l-4 border-yellow-500 bg-yellow-50;
+	}
+
+	.priority-low {
+		@apply border-l-4 border-green-500 bg-green-50;
+	}
+
+	/* Animation utilities */
+	.animate-pulse-slow {
+		animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+
+	.animate-fade-in {
+		animation: fadeIn 0.5s ease-in-out;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
