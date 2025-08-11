@@ -1,1 +1,0 @@
-# Vigtra Frontend (Not decupled)
