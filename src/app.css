@@ -1,3 +1,116 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/* Theme Variables */
+:root {
+	/* Default Theme */
+	--primary: #3b82f6;
+	--primary-dark: #2563eb;
+	--secondary: #64748b;
+	--secondary-dark: #475569;
+	--accent: #8b5cf6;
+	--accent-dark: #7c3aed;
+	--background: #ffffff;
+	--background-secondary: #f8fafc;
+	--text: #1e293b;
+	--text-secondary: #64748b;
+	--border: #e2e8f0;
+}
+
+.dark {
+	--background: #0f172a;
+	--background-secondary: #1e293b;
+	--text: #f1f5f9;
+	--text-secondary: #cbd5e1;
+	--border: #334155;
+}
+
+/* Ocean Theme */
+.theme-ocean {
+	--primary: #0ea5e9;
+	--primary-dark: #0284c7;
+	--secondary: #0284c7;
+	--secondary-dark: #0369a1;
+	--accent: #06b6d4;
+	--accent-dark: #0891b2;
+}
+
+/* Forest Theme */
+.theme-forest {
+	--primary: #10b981;
+	--primary-dark: #059669;
+	--secondary: #059669;
+	--secondary-dark: #047857;
+	--accent: #34d399;
+	--accent-dark: #10b981;
+}
+
+/* Sunset Theme */
+.theme-sunset {
+	--primary: #f97316;
+	--primary-dark: #ea580c;
+	--secondary: #ea580c;
+	--secondary-dark: #c2410c;
+	--accent: #fb923c;
+	--accent-dark: #f97316;
+}
+
+/* Purple Theme */
+.theme-purple {
+	--primary: #8b5cf6;
+	--primary-dark: #7c3aed;
+	--secondary: #7c3aed;
+	--secondary-dark: #6d28d9;
+	--accent: #a855f7;
+	--accent-dark: #8b5cf6;
+}
+
+/* Rose Theme */
+.theme-rose {
+	--primary: #e11d48;
+	--primary-dark: #be185d;
+	--secondary: #be185d;
+	--secondary-dark: #9f1239;
+	--accent: #f43f5e;
+	--accent-dark: #e11d48;
+}
+
+/* Base Styles */
+body {
+	background-color: var(--background);
+	color: var(--text);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--primary);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--primary-dark);
+}
+
+/* Utility classes for theming */
+.bg-primary { background-color: var(--primary); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-accent { background-color: var(--accent); }
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-accent { color: var(--accent); }
+.border-primary { border-color: var(--primary); }
+
+/* Smooth transitions for theme changes */
+* {
+	transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
