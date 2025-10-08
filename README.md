@@ -1,11 +1,14 @@
-# Rsbuild project
+# Vigtra Frontend (Main Project)
+
+# Prerequisite
+- `jq`
 
 ## Setup
 
 Install the dependencies:
 
 ```bash
-pnpm install
+deno install
 ```
 
 ## Get started
@@ -13,24 +16,19 @@ pnpm install
 Start the dev server, and the app will be available at [http://localhost:3000](http://localhost:3000).
 
 ```bash
-pnpm dev
+deno task serve
 ```
 
 Build the app for production:
 
 ```bash
-pnpm build
+deno task deploy
 ```
 
 Preview the production build locally:
 
 ```bash
-pnpm preview
+deno task preview-deploy
 ```
 
-## Learn more
-
-To learn more about Rsbuild, check out the following resources:
-
-- [Rsbuild documentation](https://rsbuild.rs) - explore Rsbuild features and APIs.
-- [Rsbuild GitHub repository](https://github.com/web-infra-dev/rsbuild) - your feedback and contributions are welcome!
+Read More about the modules: [REPO](https://github.com/Legacy-Engineers/vigtra-fe-modules)

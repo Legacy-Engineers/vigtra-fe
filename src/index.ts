@@ -4,9 +4,7 @@ import './index.css';
 
 const app = mount(App, {
   target: document.body,
-  props: {
-    name: 'world',
-  },
+  props: {},
 });
 
 export default app;
