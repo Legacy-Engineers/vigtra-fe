@@ -1,5 +1,11 @@
-import configData from '../config.json';
+class ModuleManager {
+  module;
 
-export function getModules() {
-  return configData.modules;
+  constructor(mod: object) {
+    this.module = mod;
+  }
+
+  getRoutes() {}
 }
+
+export default ModuleManager;

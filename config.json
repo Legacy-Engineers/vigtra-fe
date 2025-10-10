@@ -5,12 +5,6 @@
       "module": "CoreModule",
       "package_type": "github",
       "package": "@vigtra/fe-core"
-    },
-    {
-      "name": "Vigtra Core Module",
-      "module": "CoreModule",
-      "package_type": "github",
-      "package": "@vigtra/fe-core"
     }
   ]
 }
