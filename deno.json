@@ -2,7 +2,8 @@
   "tasks": {
     "serve": "deno run dev",
     "deploy": "deno run dev",
-    "preview-deploy": "deno run dev"
+    "preview-deploy": "deno run dev",
+    "load-modules": "deno run loadModules.ts --allow-read --allow-write"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1"

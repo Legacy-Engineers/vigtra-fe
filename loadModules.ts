@@ -15,7 +15,8 @@ function loadModules() {
   for (let i = 0; i < MODULES.length; i++) {
     const mod = MODULES[i];
     const packageName = mod.package; // e.g., "@vigtra/fe-core"
-    const modFn = mod.module; // e.g., "initModule"
+    const modFn = mod.module; // e.g., "CoreModule"
+    const useDefault = mod.useDefault ?? false; // Add this to config for flexibility
 
     // Create unique import variable name
     const varName = packageName
@@ -23,20 +24,27 @@ function loadModules() {
       .replace('/', '_')
       .replace(/-/g, '_');
 
-    // Build an ESM import statement
-    importList.push(`import * as ${varName} from "${packageName}";`);
-    initList.push(`  ${varName}.${modFn}(cfg["${packageName}"] || {});`);
+    // Build import statement - support both named and default imports
+    if (useDefault) {
+      // Use default import
+      importList.push(`import ${varName} from "${packageName}";`);
+      initList.push(`  ${varName}(cfg["${packageName}"] || {}),`);
+    } else {
+      // Use named import (more specific)
+      importList.push(`import { ${modFn} } from "${packageName}";`);
+      initList.push(`  ${modFn}(cfg["${packageName}"] || {}),`);
+    }
   }
 
   // Generate modules.ts content
-  const modulesData = `
-// ⚙️ Auto-generated file
+  const modulesData = `// ⚙️ Auto-generated file
 // Do not edit manually
-
 ${importList.join('\n')}
 
 export function loadModules(cfg: Record<string, unknown> = {}) {
+  return [
 ${initList.join('\n')}
+  ];
 }
 `;
 
