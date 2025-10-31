@@ -33,11 +33,13 @@
   <Sidebar.Header
     class="flex items-center justify-center border-b border-sidebar-border p-6"
   >
-    <img
-      src="/images/logo.png"
-      alt="Vigtra Logo"
-      class="h-auto w-full transition-opacity hover:opacity-90"
-    />
+    <a href="/" use:link>
+      <img
+        src="/images/logo.png"
+        alt="Vigtra Logo"
+        class="h-auto w-full transition-opacity hover:opacity-90"
+      /></a
+    >
   </Sidebar.Header>
 
   <Sidebar.Content class="gap-1 px-2 py-4">

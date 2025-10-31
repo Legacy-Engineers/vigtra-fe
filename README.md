@@ -1,4 +1,4 @@
-# Rsbuild project
+# Vigtra Frontend
 
 ## Setup
 
