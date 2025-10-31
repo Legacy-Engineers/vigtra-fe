@@ -1,4 +1,4 @@
-import {loadModules} from './modules.ts';
+import { loadModules } from './modules.ts';
 
 class ModuleDefinition {
   module;
@@ -15,13 +15,11 @@ class ModuleDefinition {
 }
 
 async function loadModuleDefinitions() {
-  const modules =  await loadModules();
+  const modules = await loadModules();
 
   for (const mod of modules) {
-    console.log(mod)
+    console.log(mod);
   }
- 
 }
 
-
-export default {  ModuleDefinition, loadModuleDefinitions };
+export default { ModuleDefinition, loadModuleDefinitions };

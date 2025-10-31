@@ -15,6 +15,7 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.14",
     "@tailwindcss/postcss": "^4.1.14",
+    "@vigtra/fe-core": "link:../modules/vigtra-fe-core",
     "deno": "^2.5.3",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.2.0",
