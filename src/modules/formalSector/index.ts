@@ -5,14 +5,16 @@ const DEFAULT_CFG: ModuleCfgDefinition = {
   name: 'Vigtra Formal Sector Module',
   description: 'Formal Private sectors',
   routes: FormalSectorRoutes,
-  version: 1,
+  version: '1.0.0',
   menu: {
     title: 'Formal Sector',
-    hookedMenu: 'Insuree',
+    hookedMenu: 'insuree.and.policies',
     items: [
       {
         title: 'Formal Sector',
-        icon: 'octicon:organization-16',
+        icon: {
+          name: 'octicon:organization-16',
+        },
         url: '/formal-sector/home',
       },
     ],

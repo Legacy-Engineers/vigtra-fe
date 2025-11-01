@@ -167,6 +167,7 @@
       maximumFractionDigits: 0,
     }).format(amount);
   }
+
 </script>
 
 <div class="min-h-screen bg-gray-50/30">

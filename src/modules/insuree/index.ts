@@ -4,20 +4,27 @@ import { InsureeRoutes } from './routes';
 const DEFAULT_CFG: ModuleCfgDefinition = {
   name: 'Vigtra Insuree Module',
   description: 'insuree and more',
-  version: 1,
+  version: '1.0.0',
   routes: InsureeRoutes,
   menu: {
-    title: 'Insuree',
-    icon: 'fluent:person-16-filled',
+    id: 'insuree.and.policies',
+    title: 'Insuree & Policies',
+    icon: { name: 'fluent:person-16-filled' },
     items: [
       {
+        title: 'Add Insuree',
+        icon: { name: 'mage:user-plus-fill' },
+        url: '/insuree/new',
+        separator: true,
+      },
+      {
         title: 'All Insurees',
-        icon: 'f7:person-2-fill',
+        icon: { name: 'f7:person-2-fill' },
         url: '/insuree/home',
       },
       {
         title: 'Families',
-        icon: 'f7:person-3-fill',
+        icon: { name: 'f7:person-3-fill' },
         url: '/insuree/families',
       },
     ],

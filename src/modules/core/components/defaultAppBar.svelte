@@ -4,22 +4,14 @@
   import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
   import Icon from '@iconify/svelte';
   import { link } from 'svelte-spa-router';
-    import { getModuleMenus } from '../..';
+    import { getModuleMenus, type ModuleDefinitionMenu } from '../..';
     import type { ComponentProps } from 'svelte';
+    import Separator from '$lib/components/ui/separator/separator.svelte';
 
-  interface MenuItem {
-    title: string;
-    url: string;
-    icon?: string;
-  }
 
-  interface NavMenu {
-    title: string;
-    icon?: string;
-    items?: MenuItem[];
-  }
 
-  const navMain: NavMenu[] = getModuleMenus();
+
+  const navMain: ModuleDefinitionMenu[] = getModuleMenus();
 
   let {
     ref = $bindable(null),
@@ -54,8 +46,8 @@
               >
                 {#if menu.icon}
                   <Icon
-                    icon={menu.icon}
-                    class="h-5 w-5 shrink-0 transition-transform group-hover/label:scale-110"
+                    icon={menu.icon.name}
+                    class={menu.icon.class ?? "h-5 w-5 shrink-0 transition-transform group-hover/label:scale-110"}
                     aria-hidden="true"
                   />
                 {/if}
@@ -80,21 +72,25 @@
                         <a
                           href={subItem.url}
                           {...props}
-                          class="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-sidebar-foreground/80 transition-all duration-200 hover:bg-sidebar-accent/50 hover:pl-4 hover:text-sidebar-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring active:scale-[0.98]"
+                          class="flex items-center gap-3 rounded-md mx-3 py-2 text-sm text-sidebar-foreground/80 transition-all duration-200 hover:bg-sidebar-accent/50 hover:pl-4 hover:text-sidebar-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring active:scale-[0.98]"
                           use:link
                         >
                           {#if subItem.icon}
                             <Icon
-                              icon={subItem.icon}
-                              class="h-4 w-4 shrink-0 transition-transform group-hover/item:scale-110"
+                              icon={subItem.icon.name}
+                              class={subItem.icon.class ?? "h-5 w-5 shrink-0 transition-transform group-hover/label:scale-110"}
                               aria-hidden="true"
                             />
                           {/if}
                           <span class="truncate">{subItem.title}</span>
                         </a>
+                        {#if subItem.separator}
+                            <Separator class="ml-2" />
+                        {/if}
                       {/snippet}
                     </Sidebar.MenuButton>
                   </Sidebar.MenuItem>
+
                 {/each}
               </Sidebar.Menu>
             </Sidebar.GroupContent>

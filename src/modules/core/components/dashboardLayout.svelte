@@ -3,6 +3,7 @@
   import DefaultAppBar from './defaultAppBar.svelte';
 
   let { children } = $props();
+
 </script>
 
 <Sidebar.Provider>

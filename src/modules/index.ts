@@ -1,20 +1,30 @@
 import ClaimModule from './claim';
+import ContributionModule from './contribution';
 import CoreModule from './core';
 import FormalSectorModule from './formalSector';
 import HomeModule from './home';
 import InsureeModule from './insuree';
+import PolicyModule from './policy';
+
+export interface MenuIcon {
+  name: string;
+  size?: string;
+  class?: string; //
+}
 
 export interface ModuleDefinitionMenuItem {
   title: string;
   url: string;
-  icon?: string;
+  icon?: MenuIcon;
+  separator?: boolean;
 }
 
 export interface ModuleDefinitionMenu {
+  id?: string;
   title: string;
   hookedMenu?: string;
   module?: string;
-  icon?: string;
+  icon?: MenuIcon;
   items?: ModuleDefinitionMenuItem[];
 }
 
@@ -23,14 +33,16 @@ export interface ModuleCfgDefinition {
   menu?: ModuleDefinitionMenu;
   name: string;
   description: string;
-  version: number;
+  version: string;
 }
 
 const MODULES: ModuleCfgDefinition[] = [
+  InsureeModule(),
+  PolicyModule(),
+  ContributionModule(),
+  ClaimModule(),
   CoreModule(),
   HomeModule(),
-  ClaimModule(),
-  InsureeModule(),
   FormalSectorModule(),
 ];
 
@@ -44,7 +56,7 @@ export function getModuleMenus(): ModuleDefinitionMenu[] {
   for (const menu of menus) {
     if (menu.hookedMenu) {
       // Find the menu it wants to hook into
-      const targetMenu = menus.find((m) => m.title === menu.hookedMenu);
+      const targetMenu = menus.find((m) => m.id === menu.hookedMenu);
       if (targetMenu) {
         // Initialize items arrays if needed
         targetMenu.items ??= [];

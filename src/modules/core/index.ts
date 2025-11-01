@@ -3,16 +3,18 @@ import type { ModuleCfgDefinition } from '..';
 const DEFAULT_CFG: ModuleCfgDefinition = {
   name: 'Vigtra Core Module',
   description: 'The core module of vigtra',
-  version: 1,
+  version: '1.0.0',
   routes: {},
   menu: {
     title: 'Administration',
-    icon: 'mage:dashboard-3-fill',
+    icon: {
+      name: 'mage:dashboard-3-fill',
+    },
     items: [
       {
         title: 'Users',
         url: '/admin/users',
-        icon: 'lsicon:user-crowd-filled',
+        icon: { name: 'lsicon:user-crowd-filled' },
       },
     ],
   },
