@@ -3,9 +3,9 @@
   import * as Sidebar from '$lib/components/ui/sidebar/index.js';
   import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
   import Icon from '@iconify/svelte';
-  import type { ComponentProps } from 'svelte';
-  import MODULES from '../..';
   import { link } from 'svelte-spa-router';
+    import { getModuleMenus } from '../..';
+    import type { ComponentProps } from 'svelte';
 
   interface MenuItem {
     title: string;
@@ -19,9 +19,7 @@
     items?: MenuItem[];
   }
 
-  const navMain: NavMenu[] = MODULES.map((mod) => mod.menu).filter(
-    Boolean,
-  ) as NavMenu[];
+  const navMain: NavMenu[] = getModuleMenus();
 
   let {
     ref = $bindable(null),

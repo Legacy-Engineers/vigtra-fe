@@ -1,22 +1,21 @@
 import type { ModuleCfgDefinition } from '..';
 
-
 const DEFAULT_CFG: ModuleCfgDefinition = {
-  routes: {},
   name: 'Vigtra Core Module',
   description: 'The core module of vigtra',
   version: 1,
+  routes: {},
   menu: {
-    title: "Administration",
-    icon: "mage:dashboard-3-fill",
+    title: 'Administration',
+    icon: 'mage:dashboard-3-fill',
     items: [
       {
-        title: "Users",
-        url: "/admin/users",
-        icon: "mdi:users"
-      }
-    ]
-  }
+        title: 'Users',
+        url: '/admin/users',
+        icon: 'lsicon:user-crowd-filled',
+      },
+    ],
+  },
 };
 
 const CoreModule = () => {
