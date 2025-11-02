@@ -6,6 +6,18 @@ const DEFAULT_CFG: ModuleCfgDefinition = {
   description: 'Home module',
   version: '1.0.0',
   routes: HomeRoutes,
+  menu: {
+    title: 'Home Menu',
+    items: [
+      {
+        title: 'Dashboard',
+        url: '/',
+        icon: {
+          name: 'material-symbols:dashboard',
+        },
+      },
+    ],
+  },
 };
 
 const HomeModule = () => {

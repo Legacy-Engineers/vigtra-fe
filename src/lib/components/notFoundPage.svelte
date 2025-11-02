@@ -1,5 +1,6 @@
 <script>
     import { push } from 'svelte-spa-router';
+    import Button from './ui/button/button.svelte';
 
     function goHome() {
         push('/');
@@ -14,12 +15,12 @@
 	<p class="mt-3 text-gray-400 max-w-md">
 		The page you're looking for doesn't exist or has been moved.
 	</p>
-	<button
-		on:click={goHome}
-		class="mt-8 px-6 py-3 rounded-xl text-black transition-all duration-200 font-semibold shadow-lg cursor-pointer"
+	<Button
+		onclick={goHome}
+		class="mt-8 px-6 py-3 rounded-xl transition-all duration-200 font-semibold shadow-lg cursor-pointer"
 	>
 		Go Home
-	</button>
+	</Button>
 	<div class="mt-12 text-gray-500 text-sm">
 		© {new Date().getFullYear()} Vigtra. All rights reserved.
 	</div>

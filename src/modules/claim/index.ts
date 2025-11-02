@@ -13,16 +13,9 @@ const DEFAULT_CFG: ModuleCfgDefinition = {
     icon: { name: 'fluent-emoji-high-contrast:baggage-claim' },
     items: [
       {
-        title: 'All Claims',
+        title: 'Claims',
         url: '/claims',
         icon: { name: 'mdi:file-document-check' },
-      },
-      {
-        title: 'Encounters',
-        url: '/encounter',
-        icon: {
-          name: 'streamline-ultimate:doctor-home-visit-1-bold',
-        },
       },
     ],
   },

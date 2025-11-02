@@ -4,6 +4,7 @@ import type {
   LocationGqlItemType,
 } from '../location/types';
 
+export type insureeTabType = 'ins' | 'fam' | 'con' | 'pol';
 export type mariatialStatusType = 'S' | 'M' | 'D' | 'W'; //Single, Married, Divorced or widowed
 export type insureeStatusType = 'AC' | 'IN' | 'DE' | 'SU' | 'PE'; //Single, Married, Divorced or widowed
 

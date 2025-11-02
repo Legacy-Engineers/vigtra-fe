@@ -1,8 +1,7 @@
-import InsureeFamilyList from "./pages/InsureeFamilyList.svelte";
-import InsureeHome from "./pages/InsureeHome.svelte";
-
+import InsureeFamilyList from './pages/InsureeFamilyList.svelte';
+import InsureeHome from './pages/InsureeHome.svelte';
 
 export const InsureeRoutes = {
-    '/insuree/home/': InsureeHome,
-    '/insuree/families/': InsureeFamilyList
-}
+  '/insuree/': InsureeHome,
+  '/insuree/families/': InsureeFamilyList,
+};

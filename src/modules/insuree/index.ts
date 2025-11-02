@@ -12,20 +12,16 @@ const DEFAULT_CFG: ModuleCfgDefinition = {
     icon: { name: 'fluent:person-16-filled' },
     items: [
       {
-        title: 'Add Insuree',
+        title: 'Insurees',
         icon: { name: 'mage:user-plus-fill' },
-        url: '/insuree/new',
+        url: '/insuree/',
         separator: true,
       },
       {
-        title: 'All Insurees',
-        icon: { name: 'f7:person-2-fill' },
-        url: '/insuree/home',
-      },
-      {
-        title: 'Families',
-        icon: { name: 'f7:person-3-fill' },
-        url: '/insuree/families',
+        title: 'Family/Group',
+        icon: { name: 'fa:group' },
+        url: '/insuree/',
+        separator: true,
       },
     ],
   },

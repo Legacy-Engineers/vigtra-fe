@@ -15,11 +15,16 @@
     "machine-translate": "inlang machine translate --project project.inlang"
   },
   "dependencies": {
+    "@tabler/icons-svelte": "^3.35.0",
     "clsx": "^2.1.1",
     "d3-scale": "^4.0.2",
+    "d3-shape": "^3.2.0",
     "mode-watcher": "^1.1.0",
+    "phosphor-svelte": "^3.0.1",
+    "radix-svelte": "^0.9.0",
     "svelte": "^5.42.2",
     "svelte-spa-router": "^4.0.1",
+    "svelte-tweakpane-ui": "^1.5.10",
     "tailwind-merge": "^3.3.1",
     "winston": "^3.18.3"
   },
@@ -33,6 +38,10 @@
     "@lucide/svelte": "^0.544.0",
     "@rsbuild/core": "^1.6.0",
     "@rsbuild/plugin-svelte": "^1.0.11",
+    "@skeletonlabs/skeleton": "^4.2.2",
+    "@skeletonlabs/skeleton-svelte": "^4.2.2",
+    "@smui/button": "^8.0.3",
+    "@smui/card": "^8.0.3",
     "@tailwindcss/postcss": "^4.1.16",
     "@tanstack/table-core": "^8.21.3",
     "bits-ui": "^2.14.1",

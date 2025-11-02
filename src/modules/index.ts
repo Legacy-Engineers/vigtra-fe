@@ -4,6 +4,7 @@ import CoreModule from './core';
 import FormalSectorModule from './formalSector';
 import HomeModule from './home';
 import InsureeModule from './insuree';
+import LocationModule from './location';
 import PolicyModule from './policy';
 
 export interface MenuIcon {
@@ -25,6 +26,7 @@ export interface ModuleDefinitionMenu {
   hookedMenu?: string;
   module?: string;
   icon?: MenuIcon;
+  useCollabsible?: boolean;
   items?: ModuleDefinitionMenuItem[];
 }
 
@@ -37,13 +39,14 @@ export interface ModuleCfgDefinition {
 }
 
 const MODULES: ModuleCfgDefinition[] = [
+  HomeModule(),
   InsureeModule(),
+  FormalSectorModule(),
+  ClaimModule(),
+  LocationModule(),
   PolicyModule(),
   ContributionModule(),
-  ClaimModule(),
   CoreModule(),
-  HomeModule(),
-  FormalSectorModule(),
 ];
 
 export function getModuleMenus(): ModuleDefinitionMenu[] {

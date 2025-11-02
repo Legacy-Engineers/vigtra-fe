@@ -27,7 +27,7 @@
   onMount(() => {
     updateLayoutForRoute(currentPath);
     if (!$userStore && currentPath !== '/login') {
-      push('/login');
+      // push('/login');
     }
     return () => {
       unsubscribe();
@@ -36,13 +36,9 @@
 </script>
 <ModeWatcher />
 {#if useLayout.value}
-    {#if $userStore}
-        <DashboardLayout>
-            <Router {routes} />
-        </DashboardLayout>
-    {:else}
-      <Router {routes} />
-    {/if}
+    <DashboardLayout>
+        <Router {routes} />
+    </DashboardLayout>
 {:else}
   <Router {routes} />
 {/if}

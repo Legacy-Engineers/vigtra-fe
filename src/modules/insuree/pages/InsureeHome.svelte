@@ -1,14 +1,10 @@
 <script>
-    import { onMount } from "svelte";
-    import { fetchInsurees } from "../services";
+    import InsureeSearchForm from "../components/insureeSearchForm.svelte";
+    import InsureeTabs from "../components/insureeTabs.svelte";
 
-    let insureeList = $state('Hello');
-
-  onMount(async () => {
-    const insureeData = await fetchInsurees();
-    // insureeList = insureeData
-  })
 </script>
 
-welcome to the insuree home page
-{insureeList}
+<div class="flex flex-col w-full gap-2">
+    <InsureeSearchForm />
+    <InsureeTabs />
+</div>

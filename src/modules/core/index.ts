@@ -7,6 +7,7 @@ const DEFAULT_CFG: ModuleCfgDefinition = {
   routes: {},
   menu: {
     title: 'Administration',
+    useCollabsible: true,
     icon: {
       name: 'mage:dashboard-3-fill',
     },
