@@ -13,21 +13,21 @@
 <Collapsible.Root title={menu.title} >
   <Sidebar.Group class="">
     <Sidebar.GroupLabel
-      class="group/label rounded-lg transition-all duration-200"
+      class="group/label rounded-lg transition-all duration-200 w-full"
     >
       {#snippet child({ props })}
         <Collapsible.Trigger
           {...props}
-          class="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-semibold text-sidebar-foreground transition-all duration-200 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring"
+          class="flex w-full items-center gap-3 px-2 rounded-lg py-2.5 text-lg font-semibold text-sidebar-foreground transition-all duration-200 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring"
         >
           {#if menu.icon}
             <Icon
               icon={menu.icon.name}
-              class={menu.icon.class ?? "h-5 w-5 shrink-0 transition-transform group-hover/label:scale-110"}
+              class={menu.icon.class ?? "h-7 w-7 shrink-0 transition-transform group-hover/label:scale-110"}
               aria-hidden="true"
             />
           {/if}
-          <span class="flex-1 text-left">{menu.title}</span>
+          <span class="flex-1 text-left text-lg">{menu.title}</span>
           <ChevronRightIcon
             class="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90"
             aria-hidden="true"
@@ -54,11 +54,11 @@
                     {#if subItem.icon}
                       <Icon
                         icon={subItem.icon.name}
-                        class={subItem.icon.class ?? "h-5 w-5 shrink-0 transition-transform group-hover/label:scale-110"}
+                        class={subItem.icon.class ?? "h-7 w-7 shrink-0 transition-transform group-hover/label:scale-110"}
                         aria-hidden="true"
                       />
                     {/if}
-                    <span class="truncate">{subItem.title}</span>
+                    <span class="truncate text-lg">{subItem.title}</span>
                   </a>
                   {#if subItem.separator}
                       <Separator class="ml-2" />

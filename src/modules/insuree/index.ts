@@ -13,7 +13,7 @@ const DEFAULT_CFG: ModuleCfgDefinition = {
     items: [
       {
         title: 'Insurees',
-        icon: { name: 'mage:user-plus-fill' },
+        icon: { name: 'ic:round-people-alt' },
         url: '/insuree/',
         separator: true,
       },

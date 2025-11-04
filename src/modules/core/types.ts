@@ -36,3 +36,19 @@ export interface userGqlItemType {
   updatedAt: DateTimeString;
   groups: userGroupNodeGqlType[];
 }
+
+export interface coreGqlFormType {
+  offset?: number;
+  before?: string;
+  after?: string;
+  first?: number;
+  last?: number;
+}
+
+
+export interface corePaginationInfoGqlType {
+  startCursor?: string;
+  endCursor?: string;
+  hasNextPage?: boolean;
+  hasPreviousPage?: boolean;
+}

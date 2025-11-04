@@ -10,10 +10,10 @@
     <a
       href={item.url}
       use:link
-      class="flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition hover:bg-sidebar-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring"
+      class="flex text-lg w-full items-center gap-3 rounded-md px-3 py-2 font-medium transition hover:bg-sidebar-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring"
     >
       {#if item.icon}
-        <Icon icon={item.icon.name} class="h-5 w-5 shrink-0 transition-transform group-hover/label:scale-110" />
+        <Icon icon={item.icon.name} class="h-7 w-7 shrink-0 transition-transform group-hover/label:scale-110" />
       {/if}
       {item.title}
     </a>

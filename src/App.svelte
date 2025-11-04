@@ -1,12 +1,11 @@
 <script lang="ts">
-  import Router, { location, push } from 'svelte-spa-router';
+  import Router, { location } from 'svelte-spa-router';
   import routes from './routes';
   import { onMount } from 'svelte';
   import { get } from 'svelte/store';
-  import { getCookie } from './modules/core/utils/cookies';
-  import DashboardLayout from './modules/core/components/dashboardLayout.svelte';
   import { useLayout, userStore } from './modules/core/stores.svelte';
-  import { ModeWatcher } from "mode-watcher";
+  import { ModeWatcher } from 'mode-watcher';
+  import DashboardLayout from './modules/core/components/dashboardLayout.svelte';
 
   let currentPath = $state(get(location));
 
@@ -34,11 +33,12 @@
     };
   });
 </script>
+
 <ModeWatcher />
 {#if useLayout.value}
-    <DashboardLayout>
-        <Router {routes} />
-    </DashboardLayout>
+  <DashboardLayout>
+    <Router {routes} />
+  </DashboardLayout>
 {:else}
   <Router {routes} />
 {/if}
