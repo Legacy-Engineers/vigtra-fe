@@ -7,7 +7,7 @@ export async function fetchInsurees(searchForm: InsureeGqlSearchForm) {
   const query = `
     {
       insurees(
-        first: ${searchForm.first || 10},
+        first: ${searchForm.first || 1000},
         ${after ? `after: ${after},` : ''}
         ${before ? `before: ${before},` : ''}
         chfId: "${searchForm.chfId || ''}"
@@ -42,8 +42,10 @@ export async function fetchInsurees(searchForm: InsureeGqlSearchForm) {
   `;
   const data = await fetchGraphql(query);
   return {
-    data: data.data.insurees.edges.map((edge: { node: InsureeGqlItem }) => edge.node),
-    pageInfo: data.data.insurees.pageInfo
+    data: data.data.insurees.edges.map(
+      (edge: { node: InsureeGqlItem }) => edge.node,
+    ),
+    pageInfo: data.data.insurees.pageInfo,
   };
 }
 

@@ -18,13 +18,18 @@
   import { getGqlCursorInfo } from '../../core/utils/gql';
 
   onMount(async () => {
+    await loadInsurees($insureeSearchFormData);
+
     console.log(
       'end cursor',
       getGqlCursorInfo($queriedInsureePaginationInfo.endCursor),
       $queriedInsureePaginationInfo.endCursor,
     );
-    await loadInsurees($insureeSearchFormData);
   });
+
+  let totalInsurees = $derived(() => {
+    return getGqlCursorInfo($queriedInsureePaginationInfo.endCursor) * getGqlCursorInfo($queriedInsureePaginationInfo.endCursor)
+  })
 </script>
 
 <div class="rounded-xl border border-border bg-card shadow-sm overflow-hidden">
@@ -147,7 +152,7 @@
     </Table.Body>
   </Table.Root>
   <Pagination.Root
-    count={getGqlCursorInfo($queriedInsureePaginationInfo.endCursor) || 20}
+    count={ totalInsurees() || 0}
     perPage={10}
   >
     {#snippet children({ pages, currentPage })}

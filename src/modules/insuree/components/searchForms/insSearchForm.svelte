@@ -2,8 +2,9 @@
   import Button from '$lib/components/ui/button/button.svelte';
   import * as Card from '$lib/components/ui/card/index.js';
   import { Input } from '$lib/components/ui/input/index.js';
+    import { getGqlCursorInfo } from '../../../core/utils/gql';
   import { loadInsurees } from '../../loaders';
-  import { queriedInsurees } from '../../stores';
+  import { queriedInsureePaginationInfo, queriedInsurees } from '../../stores';
   import type { InsureeGqlSearchForm } from '../../types';
 
   let form = $state<InsureeGqlSearchForm>({
@@ -16,12 +17,16 @@
   async function searchInsuree() {
     await loadInsurees(form);
   }
+
+  let totalInsurees = $derived(() => {
+    return getGqlCursorInfo($queriedInsureePaginationInfo.endCursor) * getGqlCursorInfo($queriedInsureePaginationInfo.endCursor)
+  })
 </script>
 
 <Card.Root>
   <Card.Header>
     <Card.Title
-      >Search for an insuree - Total Insurees: {$queriedInsurees.length}</Card.Title
+      >Search for an insuree - Total Insurees: {totalInsurees()}</Card.Title
     >
     <Card.Description
       >Search for an insuree ny using the available search options</Card.Description
