@@ -1,11 +1,13 @@
 <script>
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.png';
+	import { m } from '$lib/paraglide/messages';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
+	<title>{m['head.title']()}</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 

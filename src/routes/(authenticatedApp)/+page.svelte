@@ -1,10 +1,7 @@
-<script lang="ts">
-	import { Alert } from 'flowbite-svelte';
+<script>
+	import { m } from '$lib/paraglide/messages';
 </script>
 
-<div class="p-8">
-	<Alert>
-		<span class="font-medium">Info alert!</span>
-		Change a few things up and try submitting again.
-	</Alert>
-</div>
+<h2>
+	{m['head.title']()} - {m['head.description']()}
+</h2>

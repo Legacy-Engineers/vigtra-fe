@@ -1,4 +1,23 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+
+	"head.title": "Vigtra | Opensource Insurance Management Software",
+	"head.description": "Vigtra is an open-source insurance management software designed to streamline",
+
+	"nav.home": "Vigtra",
+	"nav.insurees_and_family": "Insurees & Families",
+	"nav.insurees": "Insurees",
+	"nav.families": "Families",
+	"nav.policies_and_packages": "Policies",
+	"nav.adminstration": "Adminstration",
+	"nav.qa_and_acc": "Quality Assurance & Accreditation",
+	"nav.claims": "Health Facility Claims",
+	"nav.preauthorization": "Preauthorization",
+	"nav.encounter": "Encounters",
+	"nav.formal_sector": "Formal Sector",
+
+	"insuree.chfid": "CHF ID",
+	"insuree.last_name": "Last Name",
+	"insuree.other_names": "Other Names",
+	"insuree.dob": "Date of Birth"
 }
